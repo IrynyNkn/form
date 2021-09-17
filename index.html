@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Form</title>
+</head>
+<body>
+<div class="loader loader--hidden">
+<div class="lds-facebook"><div></div><div></div><div></div></div></div>
+<div class="error error--hidden">
+    <div class="error__content">
+        <div id="errorDagger" class="error__icon"><i class="fas fa-times"></i></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</div>
+<div class="box">
+    <div class="form">
+        <div class="form__header">
+            <h1>Вход</h1>
+        </div>
+        <form id="form">
+            <input id="login" type="text" placeholder="Login" class="form__input">
+            <input id="password" type="password" placeholder="Password" class="form__input">
+            <div class="form__button">
+                <button id="submit">Войти</button>
+            </div>
+        </form>
+        <div class="form__footer">&copy;2021, NewSite.com</div>
+    </div>
+    <div class="sign">
+        <h2 class="sign__header">Нет аккаунта?</h2>
+        <div>
+            <button class="sign__button">Зарегистрироваться</button>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="modal__body">
+        <div id="closeModal" class="error__icon"><i class="fas fa-times"></i></div>
+        <div class="modal__text">
+            Success!
+        </div>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

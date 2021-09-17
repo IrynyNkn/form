@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body{
+    font-family: 'Russo One', sans-serif;
+    height: 100%;
+}
+
+body{
+    background-color: #22B34E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2{
+    letter-spacing: 5px;
+}
+
+.box{
+    background-color: #177634;
+    border-radius: 10px;
+    color: white;
+    width: 60%;
+    min-height: 65%;
+    display: grid;
+    grid-template-areas: 'form sign';
+    grid-auto-columns: 1fr 1fr;
+}
+
+.box > div{
+    padding: 10%;
+}
+
+.form{
+    grid-area: form;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+.form form{
+    width: 70%;
+    align-self: center;
+}
+
+.form:after{
+    content: '';
+    background-color: #22B34E;
+    width: 2px;
+    height: 80%;
+    position: absolute;
+    right: -1px;
+}
+
+.sign {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: sign;
+}
+
+.form__input{
+    width: 100%;
+}
+
+.form__button button{
+    padding: 3% 10%;
+    margin: 10px 0;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+}
+
+.form__button button:hover{
+    background-color: azure;
+}
+
+.form__input{
+    padding: 15px;
+    background-color: #22B34E;
+    color: #177634;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 1em;
+    outline: none;
+}
+
+.form__input input::placeholder{
+    color: #177634;
+}
+
+.form__footer{
+    color: black;
+    font-size: 14px;
+}
+
+.sign__header{
+    font-size: 20px;
+    margin: 5% 0;
+}
+
+.sign__button{
+    padding: 2% 15%;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    background-color: #22B34E;
+    font-weight: 600;
+}
+
+.sign__button:hover{
+    background-color: #35de69;
+}
+
+.error{
+    z-index: 2;
+    width: 25%;
+    background-color: #DF2929;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    transition: all 0.5s ease-in-out 0s;
+    opacity: 1;
+}
+
+.error--hidden{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.error--visible{
+    visibility: visible;
+}
+
+.error__content{
+    padding: 20px;
+    position: relative;
+}
+
+.error__icon{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.modal__body .error__icon:hover .fas{
+    color: #DF2929;
+}
+
+.error .error__icon:hover .fas{
+    color: #282828;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal__body{
+    background-color: #35de69;
+    width: 30%;
+    height: 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    opacity: 0;
+}
+
+.modal.modal--visible, .modal.modal--visible .modal__body{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__text{
+    font-size: 24px;
+}
+
+.loader{
+    position: absolute;
+    z-index: 2;
+}
+
+.loader--hidden{
+    visibility: hidden;
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background-color: #DF2929;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+    50%, 100% {
+        top: 24px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 868px){
+    .box{
+        grid-template-areas: 'form'
+                            'sign';
+        grid-auto-columns: 1fr;
+    }
+    .sign{
+        align-items: center;
+    }
+    .sign div,.sign__button{
+        width: 100%;
+    }
+    .error{
+        width: 60%;
+    }
+}
